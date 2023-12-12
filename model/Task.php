@@ -1,5 +1,5 @@
 <?php
-// model/task.php
+
 class Car {
     private $pdo;
 
