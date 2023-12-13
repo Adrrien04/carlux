@@ -29,12 +29,16 @@ try {
             width: 300px;
             object-fit: cover;
         }
+        .custom-logo {
+            max-width: 300px;
+            height: auto;
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1 class="display-4">C A R L U X</h1>
+    <img src="logo.png" alt="Logo Carlux" class="img-fluid custom-logo">
 
 
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ajouterVoitureModal">
@@ -84,27 +88,31 @@ try {
     </div>
 
     <?php if (!empty($listeVoitures)): ?>
-    <ul class="list-group">
-        <?php foreach ($listeVoitures as $voiture): ?>
-        <li class="list-group-item">
-            <?php if (!empty($voiture['image_link'])): ?>
-                <img src="<?php echo $voiture['image_link']; ?>" alt="Image de la voiture" class="img-fluid custom-image">
-            <?php endif; ?>
-            <h5 class="mb-1">Marque : <?php echo $voiture['marque']; ?></h5>
-            <p class="mb-1">Modèle : <?php echo $voiture['modele']; ?></p>
-            <p class="mb-1">Couleur : <?php echo $voiture['couleur']; ?></p>
-            <p class="mb-1">Motorisation : <?php echo $voiture['motorisation']; ?></p>
-            <p class="mb-1">Année : <?php echo $voiture['annee']; ?></p>
-            <p class="mb-1">Kilométrage : <?php echo $voiture['kilometrage']; ?> km</p>
-            <p class="mb-1">Prix : <?php echo $voiture['prix']; ?> €</p>
-            <a href="#" onclick="confirmerSuppression(<?php echo $voiture['id']; ?>)" class="btn btn-danger">Marquer comme vendu</a><br>
-        </li>
-        <?php endforeach; ?>
-    </ul>
+        <div class="row">
+            <?php foreach ($listeVoitures as $voiture): ?>
+                <div class="col-md-4 mb-5">
+                    <div class="card">
+                        <?php if (!empty($voiture['image_link'])): ?>
+                            <img src="<?php echo $voiture['image_link']; ?>" alt="Image de la voiture" class="card-img-top custom-image">
+                        <?php endif; ?>
+                        <div class="card-body">
+                            <h5 class="card-title">Marque: <?php echo $voiture['marque']; ?></h5>
+                            <p class="card-text">Modèle: <?php echo $voiture['modele']; ?></p>
+                            <p class="card-text">Couleur: <?php echo $voiture['couleur']; ?></p>
+                            <p class="mb-1">Motorisation : <?php echo $voiture['motorisation']; ?></p>
+                            <p class="mb-1">Année : <?php echo $voiture['annee']; ?></p>
+                            <p class="mb-1">Kilométrage : <?php echo $voiture['kilometrage']; ?> km</p>
+                            <p class="card-text">Prix: <?php echo $voiture['prix']; ?> €</p>
+                            <a href="supprimer_voiture.php?id=<?php echo $voiture['id']; ?>" class="btn btn-danger">Marquer comme vendu</a>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
     <?php else: ?>
         <p class="lead">Aucune voiture disponible.</p>
     <?php endif; ?>
-
+</div>
     <script>
         function confirmerSuppression(id) {
             var confirmation = confirm("Êtes-vous sûr de vouloir marquer ce véhicule comme vendu ?");
