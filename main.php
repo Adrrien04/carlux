@@ -103,7 +103,7 @@ try {
                             <p class="mb-1">Année : <?php echo $voiture['annee']; ?></p>
                             <p class="mb-1">Kilométrage : <?php echo $voiture['kilometrage']; ?> km</p>
                             <p class="card-text">Prix: <?php echo $voiture['prix']; ?> €</p>
-                            <a href="supprimer_voiture.php?id=<?php echo $voiture['id']; ?>" class="btn btn-danger">Marquer comme vendu</a>
+                            <a href="#" onclick="confirmerSuppression(<?php echo $voiture['id']; ?>)" class="btn btn-danger">Marquer comme vendu</a><br>
                         </div>
                     </div>
                 </div>
