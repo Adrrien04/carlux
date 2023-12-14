@@ -38,8 +38,9 @@ try {
 <body>
 
 <div class="container">
-    <img src="logo.png" alt="Logo Carlux" class="img-fluid custom-logo">
-
+    <a href="index.php">
+        <img src="img/logo.png" alt="Logo Carlux" class="img-fluid custom-logo">
+    </a>
 
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ajouterVoitureModal">
         Ajouter un véhicule
@@ -99,10 +100,10 @@ try {
                             <h5 class="card-title">Marque: <?php echo $voiture['marque']; ?></h5>
                             <p class="card-text">Modèle: <?php echo $voiture['modele']; ?></p>
                             <p class="card-text">Couleur: <?php echo $voiture['couleur']; ?></p>
-                            <p class="mb-1">Motorisation : <?php echo $voiture['motorisation']; ?></p>
-                            <p class="mb-1">Année : <?php echo $voiture['annee']; ?></p>
-                            <p class="mb-1">Kilométrage : <?php echo $voiture['kilometrage']; ?> km</p>
-                            <p class="card-text">Prix: <?php echo $voiture['prix']; ?> €</p>
+                            <p class="card-text">Motorisation : <?php echo $voiture['motorisation']; ?></p>
+                            <p class="card-text">Année : <?php echo $voiture['annee']; ?></p>
+                            <p class="card-text">Kilométrage : <?php echo $voiture['kilometrage']; ?> km</p>
+                            <h5 class="card-text">Prix: <?php echo $voiture['prix']; ?> €</h5>
                             <a href="#" onclick="confirmerSuppression(<?php echo $voiture['id']; ?>)" class="btn btn-danger">Marquer comme vendu</a><br>
                         </div>
                     </div>
