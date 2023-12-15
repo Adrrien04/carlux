@@ -1,6 +1,4 @@
 <?php
-require_once 'model/VoitureModel.php';
-
 // Connexion à la base de données
 $host = '51.158.59.186';
 $port = '14301';
@@ -8,14 +6,9 @@ $dbname = 'AC';
 $user = 'phppex';
 $pass = 'Supermotdepasse!42';
 
-if (isset($_GET['id'])) {
-    $id = $_GET['id'];
-
+try {
     $voitureModel = new VoitureModel($host, $port, $dbname, $user, $pass);
-
-    $voitureModel->supprimerVoiture($id);
-
-    header('Location: main.php');
-    exit;
+    $listeVoitures = $voitureModel->getListeVoitures();
+} catch (Exception $e) {
+    die("Erreur : " . $e->getMessage());
 }
-?>

@@ -1,6 +1,6 @@
 <?php
 
-require_once('C:\wamp64\www\php\model\VoitureModel.php');
+require_once('model/VoitureModel.php');
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

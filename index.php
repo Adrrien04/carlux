@@ -53,20 +53,6 @@
             text-decoration-color: white;
         }
 
-        #timeline {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: black;
-        }
-
-        #bloc1 {
-            height: 200px;
-        }
-
         .wave{
             position: absolute;
             width: 100%;
