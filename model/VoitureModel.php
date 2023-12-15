@@ -51,6 +51,46 @@ class VoitureModel {
         }
     }
 
+    public function trierVoitures($critere) {
+        try {
+            $sql = "SELECT * FROM cars ORDER BY ";
+
+            switch ($critere) {
+                case 'prix_asc':
+                    $sql .= "prix ASC";
+                    break;
+                case 'prix_desc':
+                    $sql .= "prix DESC";
+                    break;
+                case 'annee_asc':
+                    $sql .= "annee ASC";
+                    break;
+                case 'annee_desc':
+                    $sql .= "annee DESC";
+                    break;
+                case 'kilometrage_asc':
+                    $sql .= "kilometrage ASC";
+                    break;
+                case 'kilometrage_desc':
+                    $sql .= "kilometrage DESC";
+                    break;
+
+                default:
+                    $sql .= "id DESC";
+                    break;
+            }
+
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute();
+            $voitures = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            return $voitures;
+        } catch (PDOException $e) {
+            die("Erreur PDO lors du tri des voitures : " . $e->getMessage());
+        }
+    }
+
+
 }
 
 ?>
