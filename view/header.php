@@ -1,5 +1,4 @@
 <?php
-require_once '../model/VoitureModel.php';
 
 $critereTri = isset($_GET['tri']) ? $_GET['tri'] : 'id_desc';
 $listeVoitures = $voitureModel->trierVoitures($critereTri);
@@ -27,7 +26,7 @@ $listeVoitures = $voitureModel->trierVoitures($critereTri);
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" href="index.php">Accueil</a>
+                <a class="nav-link" href="../index.php">Accueil</a>
             </li>
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ajouterVoitureModal">
                 Ajouter un véhicule
