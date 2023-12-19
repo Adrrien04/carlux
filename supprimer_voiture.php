@@ -1,12 +1,6 @@
 <?php
 require_once 'model/VoitureModel.php';
-
-// Connexion à la base de données
-$host = '51.158.59.186';
-$port = '14301';
-$dbname = 'AC';
-$user = 'phppex';
-$pass = 'Supermotdepasse!42';
+require_once 'connexionbdd.php';
 
 if (isset($_GET['id'])) {
     $id = $_GET['id'];

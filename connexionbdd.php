@@ -1,5 +1,4 @@
 <?php
-// Connexion à la base de données
 $host = '51.158.59.186';
 $port = '14301';
 $dbname = 'AC';

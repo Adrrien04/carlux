@@ -21,15 +21,19 @@ $listeVoitures = $voitureModel->trierVoitures($critereTri);
             height: 250px;
             object-fit: cover;
         }
+
+        .container-fluid {
+            padding: 50px;
+        }
     </style>
 </head>
 <body>
 
-<div class="container">
+<div class="container-fluid">
     <?php if (!empty($listeVoitures)): ?>
         <div class="row">
             <?php foreach ($listeVoitures as $voiture): ?>
-                <div class="col-md-4 mb-4">
+                <div class="col-md-3 mb-3">
                     <div class="card">
                         <?php if (!empty($voiture['image_link'])): ?>
                             <img src="<?php echo $voiture['image_link']; ?>" alt="Image de la voiture" class="card-img-top img-fluid custom-image">
@@ -55,7 +59,7 @@ $listeVoitures = $voitureModel->trierVoitures($critereTri);
 
 <script>
     function confirmerSuppression(id) {
-        var confirmation = confirm("Êtes-vous sûr de vouloir marquer ce véhicule comme vendu ?");
+        let confirmation = confirm("Êtes-vous sûr de vouloir marquer ce véhicule comme vendu ?");
         if (confirmation) {
             window.location.href = "supprimer_voiture.php?id=" + id;
         }

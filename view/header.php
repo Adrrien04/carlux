@@ -18,12 +18,11 @@ $listeVoitures = $voitureModel->trierVoitures($critereTri);
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#"><img src="img/logo.png" class="logo"></a>
-    <!-- Bouton pour activer le menu déroulant sur les petits écrans -->
+
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <!-- Structure du menu déroulant -->
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
@@ -46,6 +45,12 @@ $listeVoitures = $voitureModel->trierVoitures($critereTri);
                         <option value="kilometrage_desc" <?php echo ($critereTri === 'kilometrage_desc') ? 'selected' : ''; ?>>Kilométrage décroissant</option>
 
                     </select>
+                </form>
+            </li>
+            <li class="nav-item">
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Rechercher" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
                 </form>
             </li>
         </ul>
