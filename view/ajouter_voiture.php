@@ -1,6 +1,6 @@
 <?php
 
-require_once('model/VoitureModel.php');
+require_once('../model/VoitureModel.php');
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $voitureModel->ajouterVoiture($marque, $modele, $annee, $couleur, $motorisation, $kilometrage, $prix, $imageLink);
 
-    header('Location: main.php');
+    header('Location: ../main.php');
     exit;
 }
 

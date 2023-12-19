@@ -8,8 +8,10 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="ajouter_voiture.php" method="post" enctype="multipart/form-data">
-                    <label for="marque">Marque :</label>
+                <form action="view/ajouter_voiture.php" method="post" enctype="multipart/form-data">
+
+
+                <label for="marque">Marque :</label>
                     <input type="text" id="marque" name="marque" required><br>
 
                     <label for="modele">Modèle :</label>

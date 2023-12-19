@@ -1,5 +1,5 @@
 <?php
-require_once 'model/VoitureModel.php';
+require_once '../model/VoitureModel.php';
 require_once 'connexionbdd.php';
 
 if (isset($_GET['id'])) {
@@ -9,7 +9,7 @@ if (isset($_GET['id'])) {
 
     $voitureModel->supprimerVoiture($id);
 
-    header('Location: main.php');
+    header('Location: ../main.php');
     exit;
 }
 ?>

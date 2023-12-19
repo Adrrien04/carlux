@@ -90,6 +90,21 @@ class VoitureModel {
         }
     }
 
+    public function rechercherParMarque($marque) {
+        try {
+            $sql = "SELECT * FROM cars WHERE marque = :marque";
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->bindParam(':marque', $marque, PDO::PARAM_STR);
+            $stmt->execute();
+            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            return $result;
+        } catch (PDOException $e) {
+            die("Erreur PDO lors de la recherche par marque : " . $e->getMessage());
+        }
+    }
+
+
 
 }
 

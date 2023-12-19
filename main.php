@@ -1,12 +1,18 @@
 <?php
 require_once 'model/VoitureModel.php';
-require_once 'connexionbdd.php';
+require_once 'view/connexionbdd.php';
 require_once 'view/header.php';
 require_once 'view/modal.php';
 
 $critereTri = isset($_GET['tri']) ? $_GET['tri'] : 'id_desc';
 $listeVoitures = $voitureModel->trierVoitures($critereTri);
-
+if (isset($_GET['q'])) {
+    $query = $_GET['q'];
+    $listeVoitures = $voitureModel->rechercherVoitures($query);
+} else {
+    $listeVoitures = $voitureModel->trierVoitures($critereTri);
+}
+?>
 ?>
 
 <!DOCTYPE html>
@@ -61,7 +67,7 @@ $listeVoitures = $voitureModel->trierVoitures($critereTri);
     function confirmerSuppression(id) {
         let confirmation = confirm("Êtes-vous sûr de vouloir marquer ce véhicule comme vendu ?");
         if (confirmation) {
-            window.location.href = "supprimer_voiture.php?id=" + id;
+            window.location.href = "view/supprimer_voiture.php?id=" + id;
         }
     }
 </script>

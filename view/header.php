@@ -1,5 +1,6 @@
 <?php
-require_once 'model/VoitureModel.php';
+require_once '../model/VoitureModel.php';
+
 $critereTri = isset($_GET['tri']) ? $_GET['tri'] : 'id_desc';
 $listeVoitures = $voitureModel->trierVoitures($critereTri);
 
@@ -17,7 +18,7 @@ $listeVoitures = $voitureModel->trierVoitures($critereTri);
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#"><img src="img/logo.png" class="logo"></a>
+    <a class="navbar-brand" href="#"><img src="../img/logo.png" class="logo"></a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -33,7 +34,7 @@ $listeVoitures = $voitureModel->trierVoitures($critereTri);
             </button>
 
             <li class="nav-item">
-                <form class="form-inline" action="main.php" method="get">
+                <form class="form-inline" action="../main.php" method="get">
                     <label for="tri" class="mr-2">Trier par :</label>
                     <select class="form-control" id="tri" name="tri" onchange="this.form.submit()">
                         <option value="id_desc" <?php echo ($critereTri === 'id_desc') ? 'selected' : ''; ?>>Dernières annonces</option>
@@ -47,12 +48,11 @@ $listeVoitures = $voitureModel->trierVoitures($critereTri);
                     </select>
                 </form>
             </li>
-            <li class="nav-item">
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Rechercher" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
-                </form>
-            </li>
+            <form action="/view/rechercher_voiture.php" method="get">
+                <label for="searchQuery">Recherche :</label>
+                <input type="text" id="searchQuery" name="q" placeholder="Marque, Modèle, etc.">
+                <button type="submit">Rechercher</button>
+            </form>
         </ul>
     </div>
 </nav>
