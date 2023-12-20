@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $voitureModel->insererCommande($modele, $nom, $prenom, $email, $message, $prix);
 
-        // Rediriger avec un paramètre GET pour indiquer le succès
+
         header('Location: achat.php?success=true');
         exit();
     } catch (PDOException $e) {
