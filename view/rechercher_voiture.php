@@ -27,6 +27,7 @@ if (isset($_GET['q'])) {
                 echo '<p class="card-text">Modèle: ' . htmlspecialchars($resultat['modele']) . '</p>';
                 echo '<p class="card-text">Couleur: ' . htmlspecialchars($resultat['couleur']) . ' </p>';
                 echo '<p class="card-text">Motorisation: ' . htmlspecialchars($resultat['motorisation']) . ' </p>';
+                echo '<p class="card-text">Kilométrage: ' . htmlspecialchars($resultat['kilometrage']). ' km</p>';
                 echo '<h5 class="card-text">Prix: ' . htmlspecialchars($resultat['prix']) . ' €</h5>';
 
                 echo '</div>';
