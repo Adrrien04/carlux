@@ -26,7 +26,7 @@ $cars = $voitureModel->getListeVoitures();
     $error = isset($_GET['error']) ? $_GET['error'] : false;
 
     if ($success) {
-        echo '<div class="alert alert-success" role="alert">Commande envoyée avec succès!</div>';
+        echo '<div class="alert alert-success" role="alert">Commande envoyée avec succès !</div>';
     } elseif ($error) {
         echo '<div class="alert alert-danger" role="alert">Erreur lors de l\'envoi de la commande.</div>';
     }

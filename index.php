@@ -117,7 +117,7 @@
     </div>
     <div class="textesousbouton">
         <a href="main.php" style="text-decoration: none">
-            <p style="color: white"> ACCEDER A CARLUX </p> </div>
+            <p style="color: white"> ACCÉDER À CARLUX </p> </div>
     </a>
 </div>
 
