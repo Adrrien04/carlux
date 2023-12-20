@@ -2,6 +2,7 @@
 
 $critereTri = isset($_GET['tri']) ? $_GET['tri'] : 'id_desc';
 $listeVoitures = $voitureModel->trierVoitures($critereTri);
+$carlux ='/carlux'
 
 ?>
 <!DOCTYPE html>
@@ -19,7 +20,7 @@ $listeVoitures = $voitureModel->trierVoitures($critereTri);
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="../main.php"><img src="../img/logo.png" class="logo"></a>
+    <a class="navbar-brand" href="<?php echo $carlux; ?>/main.php"><img src="<?php echo $carlux; ?>/img/logo.png" class="logo"></a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -28,13 +29,13 @@ $listeVoitures = $voitureModel->trierVoitures($critereTri);
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" href="../index.php">Accueil</a>
+                <a class="nav-link" href="<?php echo $carlux; ?>/index.php">Accueil</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="../main.php">Véhicules</a>
+                <a class="nav-link" href="<?php echo $carlux; ?>/main.php">Véhicules</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="../view/achat.php">Commander</a>
+                <a class="nav-link" href="<?php echo $carlux; ?>/view/achat.php">Commander</a>
             </li>
             <li class="nav-item">
             </li>

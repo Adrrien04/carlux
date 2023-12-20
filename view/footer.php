@@ -1,3 +1,6 @@
+<?php
+$carlux ='/carlux'
+    ?>
 <style>
     .site-footer
     {
@@ -83,9 +86,9 @@
             <div class="col-xs-6 col-md-3">
                 <h6>QUICK LINKS</h6>
                 <ul class="footer-links">
-                    <li><a href="../index.php">Accueil</a></li>
-                    <li><a href="../main.php">Véhicules Disponibles</a></li>
-                    <li><a href="../view/achat.php">Commander</a></li>
+                    <li><a href="<?php echo $carlux; ?>/index.php">Accueil</a></li>
+                    <li><a href="<?php echo $carlux; ?>/main.php">Véhicules Disponibles</a></li>
+                    <li><a href="<?php echo $carlux; ?>/view/achat.php">Commander</a></li>
 
                 </ul>
             </div>

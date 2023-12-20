@@ -37,7 +37,7 @@ $cars = $voitureModel->getListeVoitures();
     <form action="traitement_commande.php" method="post">
         <div class="form-group">
             <label for="car">Sélectionnez un véhicule disponible:</label>
-            <select class="form-control" name="modele" id="velo" required>
+            <select class="form-control" name="modele" id="car" required>
                 <?php foreach ($cars as $car) : ?>
                     <option value="<?php echo $car['modele']; ?>" data-prix="<?php echo $car['prix']; ?>"><?php echo $car['modele']; ?></option>
                 <?php endforeach; ?>
@@ -76,8 +76,8 @@ $cars = $voitureModel->getListeVoitures();
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <script>
-    $('#velo').change(function () {
-        var prix = $(this).find(':selected').data('prix');
+    $('#car').change(function () {
+        let prix = $(this).find(':selected').data('prix');
         $('#total').text(prix);
     });
 </script>

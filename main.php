@@ -4,6 +4,7 @@ require_once 'view/connexionbdd.php';
 require_once 'view/header.php';
 require_once 'view/modal.php';
 
+$carlux ='/carlux';
 $critereTri = isset($_GET['tri']) ? $_GET['tri'] : 'id_desc';
 $listeVoitures = $voitureModel->trierVoitures($critereTri);
 if (isset($_GET['q'])) {
@@ -53,11 +54,12 @@ if (isset($_GET['q'])) {
 
 
         <div class="col-md-4 mb-3">
-            <form class="form-inline" action="/view/rechercher_voiture.php" method="get">
+            <form class="form-inline" action="<?php echo $carlux; ?>/view/rechercher_voiture.php" method="get">
                 <label for="searchQuery">Recherche :</label>
                 <input type="text" id="searchQuery" name="q" placeholder="Marque, Modèle, Couleur, etc.">
                 <button type="submit" class="btn btn-primary">Rechercher</button>
             </form>
+
         </div>
 
         <div class="col-md-4 mb-3">
