@@ -75,12 +75,5 @@ $cars = $voitureModel->getListeVoitures();
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<script>
-    // Calculer le prix total lorsque l'utilisateur sélectionne une voiture
-    $('#velo').change(function () {
-        var prix = $(this).find(':selected').data('prix');
-        $('#total').text(prix);
-    });
-</script>
 </body>
 </html>

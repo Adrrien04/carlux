@@ -11,17 +11,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $email = $_POST['email'];
         $message = $_POST['message'];
 
-        // Récupérer le prix de la voiture depuis la base de données
         $voitureModel = new VoitureModel($host, $port, $dbname, $user, $pass);
         $prix = $voitureModel->getPrixByModele($modele);
 
         if (!$prix) {
-            // Le modèle de voiture n'a pas été trouvé, vous pouvez gérer cela comme vous le souhaitez
             header('Location: ?page=commander&error=true');
             exit();
         }
 
-        // Effectuer l'insertion dans la table commandes avec le prix
         $voitureModel->insererCommande($modele, $nom, $prenom, $email, $message, $prix);
 
         // Rediriger avec un paramètre GET pour indiquer le succès
