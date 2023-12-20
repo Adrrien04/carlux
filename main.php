@@ -13,7 +13,7 @@ if (isset($_GET['q'])) {
     $listeVoitures = $voitureModel->trierVoitures($critereTri);
 }
 ?>
-?>
+
 
 <!DOCTYPE html>
 <html lang="fr">

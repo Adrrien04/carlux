@@ -17,7 +17,7 @@ $listeVoitures = $voitureModel->trierVoitures($critereTri);
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#"><img src="../img/logo.png" class="logo"></a>
+    <a class="navbar-brand" href="../main.php"><img src="../img/logo.png" class="logo"></a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -46,11 +46,11 @@ $listeVoitures = $voitureModel->trierVoitures($critereTri);
 
                     </select>
                 </form>
-            </li>
-            <form action="/view/rechercher_voiture.php" method="get">
+            </li class="nav-item">
+            <form class="form-inline" action="/view/rechercher_voiture.php" method="get">
                 <label for="searchQuery">Recherche :</label>
-                <input type="text" id="searchQuery" name="q" placeholder="Marque, Modèle, etc.">
-                <button type="submit">Rechercher</button>
+                <input type="text" id="searchQuery" name="q" placeholder="Marque, Modèle, Couleur, etc.">
+                <button type="submit" class="btn btn-primary">Rechercher</button>
             </form>
         </ul>
     </div>

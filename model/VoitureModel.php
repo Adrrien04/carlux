@@ -90,19 +90,29 @@ class VoitureModel {
         }
     }
 
-    public function rechercherParMarque($marque) {
+    public function rechercherGenerale($query) {
         try {
-            $sql = "SELECT * FROM cars WHERE marque = :marque";
+
+            $sql = "SELECT * FROM cars WHERE 
+                marque LIKE :query OR 
+                modele LIKE :query OR 
+                couleur LIKE :query OR 
+                motorisation LIKE :query OR 
+                CONCAT(marque, ' ', modele) LIKE :query OR 
+                modele LIKE CONCAT(:query, '%') OR 
+                motorisation LIKE CONCAT(:query, '%')";
             $stmt = $this->pdo->prepare($sql);
-            $stmt->bindParam(':marque', $marque, PDO::PARAM_STR);
+            $stmt->bindParam(':query', $query, PDO::PARAM_STR);
             $stmt->execute();
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             return $result;
         } catch (PDOException $e) {
-            die("Erreur PDO lors de la recherche par marque : " . $e->getMessage());
+            die("Erreur PDO lors de la recherche générale : " . $e->getMessage());
         }
     }
+
+
 
 
 

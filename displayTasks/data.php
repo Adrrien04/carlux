@@ -1,5 +1,5 @@
 <?php
-// displayTasks/data.php
+
 require_once('model/Task.php');
 
 $carModel = new Car($pdo);
