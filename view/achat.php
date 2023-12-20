@@ -3,10 +3,10 @@ require_once('../model/VoitureModel.php');
 require_once 'connexionbdd.php';
 require_once 'header.php';
 
-// Instancier la classe VoitureModel
+
 $voitureModel = new VoitureModel($host, $port, $dbname, $user, $pass);
 
-// Récupérer la liste des voitures
+
 $cars = $voitureModel->getListeVoitures();
 ?>
 
@@ -81,5 +81,8 @@ $cars = $voitureModel->getListeVoitures();
         $('#total').text(prix);
     });
 </script>
+<?php
+require_once '../view/footer.php';
+?>
 </body>
 </html>

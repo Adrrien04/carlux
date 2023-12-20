@@ -41,11 +41,13 @@ if (isset($_GET['q'])) {
 
         echo '</div>';
     } catch (Exception $e) {
-        // Gérez les erreurs ici
         echo "Erreur : " . $e->getMessage();
     }
 } else {
     header("Location: ../main.php");
     exit();
 }
+?>
+<?php
+require_once '../view/footer.php';
 ?>
