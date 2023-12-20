@@ -96,6 +96,7 @@ class VoitureModel {
             $sql = "SELECT * FROM cars WHERE 
                 marque LIKE :query OR 
                 modele LIKE :query OR 
+                annee LIKE :query OR 
                 couleur LIKE :query OR 
                 motorisation LIKE :query OR 
                 CONCAT(marque, ' ', modele) LIKE :query OR 
