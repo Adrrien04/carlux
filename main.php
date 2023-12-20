@@ -53,6 +53,7 @@ if (isset($_GET['q'])) {
                             <p class="card-text">Kilométrage : <?php echo $voiture['kilometrage']; ?> km</p>
                             <h5 class="card-text">Prix: <?php echo $voiture['prix']; ?> €</h5>
                             <a href="#" onclick="confirmerSuppression(<?php echo $voiture['id']; ?>)" class="btn btn-danger">Marquer comme vendu</a><br>
+                            <a href="view/achat.php" class="btn btn-primary">Commander</a>
                         </div>
                     </div>
                 </div>

@@ -7,7 +7,7 @@ class VoitureModel {
         try {
             $dsn = "mysql:host=$host;port=$port;dbname=$dbname;charset=utf8mb4";
             $this->pdo = new PDO($dsn, $user, $pass);
-            $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Activer les exceptions en cas d'erreur
+            $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $e) {
             die("Erreur de connexion à la base de données : " . $e->getMessage());
         }
@@ -109,6 +109,27 @@ class VoitureModel {
             return $result;
         } catch (PDOException $e) {
             die("Erreur PDO lors de la recherche générale : " . $e->getMessage());
+        }
+    }
+
+    public function getPrixByModele($modele) {
+        try {
+            $stmt = $this->pdo->prepare('SELECT prix FROM cars WHERE modele = ?');
+            $stmt->execute([$modele]);
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            return $result ? $result['prix'] : null;
+        } catch (PDOException $e) {
+            die("Erreur PDO lors de la récupération du prix : " . $e->getMessage());
+        }
+    }
+
+    public function insererCommande($modele, $nom, $prenom, $email, $message, $prix) {
+        try {
+            $stmt = $this->pdo->prepare('INSERT INTO commandes (modele, nom, prenom, email, message, prix) VALUES (?, ?, ?, ?, ?, ?)');
+            $stmt->execute([$modele, $nom, $prenom, $email, $message, $prix]);
+        } catch (PDOException $e) {
+            die("Erreur PDO lors de l'insertion de la commande : " . $e->getMessage());
         }
     }
 

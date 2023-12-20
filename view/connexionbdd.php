@@ -1,4 +1,5 @@
 <?php
+@include_once('../model/VoitureModel.php');
 $host = '51.158.59.186';
 $port = '14301';
 $dbname = 'AC';
@@ -11,3 +12,4 @@ try {
 } catch (Exception $e) {
     die("Erreur : " . $e->getMessage());
 }
+?>
