@@ -1,5 +1,5 @@
 <?php
-$carlux ='/carlux'
+$carlux ='/carlux';
     ?>
 <style>
     .site-footer

@@ -3,7 +3,6 @@ require_once 'model/VoitureModel.php';
 require_once 'view/connexionbdd.php';
 require_once 'view/header.php';
 require_once 'view/modal.php';
-
 $carlux ='/carlux';
 $critereTri = isset($_GET['tri']) ? $_GET['tri'] : 'id_desc';
 $listeVoitures = $voitureModel->trierVoitures($critereTri);

@@ -2,7 +2,7 @@
 
 $critereTri = isset($_GET['tri']) ? $_GET['tri'] : 'id_desc';
 $listeVoitures = $voitureModel->trierVoitures($critereTri);
-$carlux ='/carlux'
+$carlux ='/carlux';
 
 ?>
 <!DOCTYPE html>
