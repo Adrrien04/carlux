@@ -37,7 +37,7 @@ if (isset($_GET['q'])) {
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-4 mb-3">
-            <form class="form-inline" action="../main.php" method="get">
+            <form class="form-inline" action="<?php echo $carlux ?>/main.php" method="get">
                 <label for="tri" class="mr-2">Trier par :</label>
                 <select class="form-control" id="tri" name="tri" onchange="this.form.submit()">
                     <option value="id_desc" <?php echo ($critereTri === 'id_desc') ? 'selected' : ''; ?>>Dernières annonces</option>
