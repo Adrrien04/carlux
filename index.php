@@ -116,7 +116,7 @@
         </a>
     </div>
     <div class="textesousbouton">
-        <a href="#timeline" style="text-decoration: none">
+        <a href="main.php" style="text-decoration: none">
             <p style="color: white"> ACCEDER A CARLUX </p> </div>
     </a>
 </div>

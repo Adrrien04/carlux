@@ -31,30 +31,14 @@ $listeVoitures = $voitureModel->trierVoitures($critereTri);
                 <a class="nav-link" href="../index.php">Accueil</a>
             </li>
             <li class="nav-item">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ajouterVoitureModal">
-                    Ajouter un véhicule
-                </button>
+                <a class="nav-link" href="../main.php">Véhicules</a>
             </li>
             <li class="nav-item">
-                <form class="form-inline" action="../main.php" method="get">
-                    <label for="tri" class="mr-2">Trier par :</label>
-                    <select class="form-control" id="tri" name="tri" onchange="this.form.submit()">
-                        <option value="id_desc" <?php echo ($critereTri === 'id_desc') ? 'selected' : ''; ?>>Dernières annonces</option>
-                        <option value="prix_asc" <?php echo ($critereTri === 'prix_asc') ? 'selected' : ''; ?>>Prix croissant</option>
-                        <option value="prix_desc" <?php echo ($critereTri === 'prix_desc') ? 'selected' : ''; ?>>Prix décroissant</option>
-                        <option value="annee_asc" <?php echo ($critereTri === 'annee_asc') ? 'selected' : ''; ?>>Année croissant</option>
-                        <option value="annee_desc" <?php echo ($critereTri === 'annee_desc') ? 'selected' : ''; ?>>Année décroissant</option>
-                        <option value="kilometrage_asc" <?php echo ($critereTri === 'kilometrage_asc') ? 'selected' : ''; ?>>Kilométrage croissant</option>
-                        <option value="kilometrage_desc" <?php echo ($critereTri === 'kilometrage_desc') ? 'selected' : ''; ?>>Kilométrage décroissant</option>
-                    </select>
-                </form>
+                <a class="nav-link" href="../view/achat.php">Commander</a>
             </li>
             <li class="nav-item">
-                <form class="form-inline" action="/view/rechercher_voiture.php" method="get">
-                    <label for="searchQuery">Recherche :</label>
-                    <input type="text" id="searchQuery" name="q" placeholder="Marque, Modèle, Couleur, etc.">
-                    <button type="submit" class="btn btn-primary">Rechercher</button>
-                </form>
+            </li>
+            <li class="nav-item">
             </li>
         </ul>
     </div>
